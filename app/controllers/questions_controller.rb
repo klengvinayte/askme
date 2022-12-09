@@ -33,16 +33,18 @@ class QuestionsController < ApplicationController
   def edit
   end
 
+  def hide
+    @question.toggle!(:hidden)
+    redirect_to questions_path
+  end
+
+  private
+
   def question_params
     params.require(:question).permit(:body, :user_id)
   end
 
   def set_question
     @question = Question.find(params[:id])
-  end
-
-  def hide
-    @question.toggle!(:hidden)
-    redirect_to questions_path
   end
 end
