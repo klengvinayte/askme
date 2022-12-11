@@ -24,5 +24,9 @@ a, button {
 }
 
 .transparent {
-  color: rgba(157, 2, 8, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.text-grey {
+  color: #a0a0a0;
 }
