@@ -7,17 +7,20 @@
   </p>
 </div>
 
-  <div class="container mt-sm">
-    <h2 class="title-lg">Все вопросы</h2>
-  </div>
-  <% @questions.each do |question| %>
-    <% if question.hidden? %>
-      <div class="mt-sm transparent container">
-        <%= render question %>
-      </div>
-    <% else %>
-      <div class="mt-sm container">
-        <%= render question %>
-      </div>
-    <% end %>
+<div class="container mt-sm">
+  <h2 class="title-lg">
+    <%= @questions.count %>
+    <%= inclination(@questions.count, "вопрос", "вопроса", "вопросов") %>
+  </h2>
+</div>
+<% @questions.each do |question| %>
+  <% if question.hidden? %>
+    <div class="mt-sm transparent container">
+      <%= render question %>
+    </div>
+  <% else %>
+    <div class="mt-sm container">
+      <%= render question %>
+    </div>
   <% end %>
+<% end %>
