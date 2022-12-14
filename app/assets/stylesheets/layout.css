@@ -1,5 +1,6 @@
 body {
   background: #03071e;
+  background-image: url("https://wallpapercave.com/wp/wp10117436.jpg");
   display: flex;
   justify-content: center;
 }
@@ -11,7 +12,7 @@ body {
 }
 
 .container {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   padding: 20px;
 }
 
@@ -19,13 +20,14 @@ body {
   padding: 20px;
 }
 
-.container {
-  background: #fff;
+.container_tr {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
 }
 
 .navbar {
   align-items: center;
-  background-color: #370617;
+  background-color: #263949;
   color: white;
   display: flex;
   justify-content: space-between;

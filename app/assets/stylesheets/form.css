@@ -5,7 +5,7 @@
 
 .form-text-field:focus,
 .form-text-area:focus {
-  background-color: #ffe8ad;
+  background-color: #ffeec2;
   background-opacity: 0.5;
   outline-width: 0;
 }

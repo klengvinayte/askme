@@ -1,4 +1,5 @@
 <div class="container">
+
   <p class="mt">
     <%= link_to "Создать новый вопрос", new_question_path, class: 'button button-main' %>
   </p>
@@ -15,7 +16,7 @@
 </div>
 <% @questions.each do |question| %>
   <% if question.hidden? %>
-    <div class="mt-sm transparent container">
+    <div class="mt-sm transparent container_tr">
       <%= render question %>
     </div>
   <% else %>

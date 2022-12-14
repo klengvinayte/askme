@@ -4,7 +4,15 @@ class QuestionsController < ApplicationController
   def create
     question = Question.create(question_params)
 
-    redirect_to question_path(question), notice: 'Новый вопрос создан!'
+    if question.save
+
+      redirect_to question_path(question), notice: 'Новый вопрос создан!'
+    else
+      flash.now[:alert] = "Вопрос должен содержать не менее 4 и не более 280 знаков"
+
+      render :new
+
+    end
   end
 
   def update

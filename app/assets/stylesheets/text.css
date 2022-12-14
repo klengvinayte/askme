@@ -24,11 +24,15 @@ a, button {
 }
 
 .transparent {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .text-grey {
   color: #a0a0a0;
+}
+
+.text-red {
+  color: #d00000;
 }
 
 .text-bold {
