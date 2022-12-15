@@ -25,6 +25,14 @@
       <p class="mt"><%= form.label :password_confirmation, 'Подтверждение пароля' %></p>
       <p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
 
+      <p class="mt">
+      <p class="mb"><%= form.label 'Изменить цвет профиля' %></p>
+      <span><%= form.color_field :color, class: 'mr' %></span>
+      </p>
+
+      <%#= form.input :color, input_html: { type: 'color' }, label: "Background Colour" %>
+
+
       <p class="mt-lg">
         <%= form.submit "Сохранить", class: 'button button-main' %>
         <span class="text-sm">или <%= link_to "вернуться", :back %></span>

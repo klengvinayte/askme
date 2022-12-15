@@ -25,6 +25,14 @@
     </div>
   </div>
 
+  <% if current_user.present? %>
+    <style>
+      :root {
+        --main-color: <%= current_user.color.nil? ? "#263949" : current_user.color %>;
+      }
+    </style>
+  <% end %>
+
   <% if flash[:notice].present? %>
     <p class="mb mt message message-notice"><%= flash[:notice] %></p>
   <% elsif flash[:alert].present? %>

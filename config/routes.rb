@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resource :session, only: %i[new create destroy update]
-  resources :users, only: %i[new create edit update destroy]
+  resources :users, except: %i[index]
 
   root to: 'questions#index'
 

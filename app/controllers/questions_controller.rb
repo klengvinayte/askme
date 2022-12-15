@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
 
       redirect_to question_path(question), notice: 'Новый вопрос создан!'
     else
-      flash.now[:alert] = "Вопрос должен содержать не менее 4 и не более 280 знаков"
+      flash.now[:alert] = "Поле 'Вопрос' не должно быть пустым и должно содержать не более 280 знаков"
 
       render :new
 
@@ -16,9 +16,14 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question.update(question_params)
+    if @question.update(question_params)
 
-    redirect_to question_path(@question), notice: 'Изменения сохранены'
+      redirect_to question_path(@question), notice: 'Изменения сохранены'
+    else
+      flash.now[:alert] = "Не удалось сохранить изменения"
+
+      render :new
+    end
   end
 
   def destroy
