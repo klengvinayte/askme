@@ -31,6 +31,12 @@
         --main-color: <%= current_user.color.nil? ? "#263949" : current_user.color %>;
       }
     </style>
+    <% else %>
+    <style>
+      :root {
+        --main-color: <%= "#263949" %>;
+      }
+    </style>
   <% end %>
 
   <% if flash[:notice].present? %>

@@ -14,6 +14,9 @@ class User < ApplicationRecord
             length: { maximum: 40 },
             format: { with: /\A\w+\Z/ }
 
+  validates :color,
+            format: { with: /\A#[\w\d]{6}\z/ }
+
   def downcase_nickname
     nickname.downcase!
   end
