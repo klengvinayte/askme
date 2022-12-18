@@ -1,0 +1,9 @@
+<div class="container mb-sm user-box-empty">
+  <% if @questions.empty? %>
+    <p class="text-dark-red">У этого пользователя нет вопросов</p>
+
+    <div><%= image_tag "icons/icon.png", height: 300 %></div>
+    <%= link_to "Задай вопрос первым!", new_question_path(user_id: @user.id),
+                class: 'button button-main' %>
+  <% end %>
+</div>

@@ -37,3 +37,7 @@ body {
   color: white;
   text-decoration: none;
 }
+
+.empty_question {
+  justify-content: center;
+}
