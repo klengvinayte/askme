@@ -15,7 +15,7 @@ class User < ApplicationRecord
             format: { with: /\A\w+\Z/ }
 
   validates :color,
-            format: { with: /\A#([a-f0-9]{3}){1,2}\z/i }
+            format: { with: /\A#[[:xdigit:]]{3,6}\z/ }
 
   has_many :questions, dependent: :delete_all
 

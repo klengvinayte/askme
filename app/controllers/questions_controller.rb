@@ -3,9 +3,13 @@ class QuestionsController < ApplicationController
   before_action :set_question_for_current_user, only: %i[edit update destroy hide]
 
   def create
-    question_params = params.require(:question).permit(:body, :user_id)
+    question_params = params.require(:question).permit(:body, :user_id, :author_id)
 
     @question = Question.create(question_params)
+
+    if current_user.present?
+      @question.author_id = current_user.id
+    end
 
     if @question.save
 
@@ -57,6 +61,10 @@ class QuestionsController < ApplicationController
   def hide
     @question.toggle!(:hidden)
     redirect_to questions_path
+  end
+
+  def author
+    User.find[:author_id] if author_id.present?
   end
 
   private
