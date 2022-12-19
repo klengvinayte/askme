@@ -18,6 +18,7 @@ class User < ApplicationRecord
             format: { with: /\A#[[:xdigit:]]{3,6}\z/ }
 
   has_many :questions, dependent: :delete_all
+  has_many :author_id, class_name: 'Question', dependent: :nullify
 
   def downcase_nickname
     nickname.downcase!
