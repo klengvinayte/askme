@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     @question = Question.create(question_params)
 
     if current_user.present?
-      @question.author_id = current_user.id
+      @question.author = current_user
     end
 
     if @question.save
