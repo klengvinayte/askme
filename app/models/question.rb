@@ -5,6 +5,6 @@ class Question < ApplicationRecord
             length: { maximum: 280 }
 
   belongs_to :user
-  belongs_to :author, class_name: 'User', optional: true
+  belongs_to :author, class_name: 'User', optional: true, foreign_key: :author_id
 
 end

@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @questions = @user.questions.order('created_at DESC')
+    @questions = @user.questions.order('created_at DESC')
+
     @questions = @user.questions
     @question = Question.new(user: @user)
   end
@@ -55,8 +56,12 @@ class UsersController < ApplicationController
     redirect_with_alert unless current_user == @user
   end
 
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
+
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by!(nickname: params[:nickname])
   end
 
   def user_params

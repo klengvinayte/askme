@@ -15,12 +15,19 @@ class User < ApplicationRecord
             format: { with: /\A\w+\Z/ }
 
   validates :color,
-            format: { with: /\A#[[:xdigit:]]{3,6}\z/ }
+            format: { with: /\A#(\h{3}){1,2}\z/ }
 
   has_many :questions, dependent: :delete_all
   has_many :author_id, class_name: 'Question', dependent: :nullify
 
+  include Gravtastic
+  gravtastic(secure: true, filetype: :png, size: 80, default: 'retro')
+
   def downcase_nickname
     nickname.downcase!
+  end
+
+  def to_param
+    nickname
   end
 end
