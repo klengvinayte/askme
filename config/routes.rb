@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root to: 'questions#index'
 
+  resources :tags, only: %i[show], param: :name
+
+
   resources :questions do
     member do
       put :hide

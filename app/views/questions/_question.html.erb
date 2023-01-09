@@ -8,6 +8,11 @@
   </div>
 <% end %>
 
+
+<div class="mb-sm text-sm">
+  <%= question.tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ").html_safe %>
+</div>
+
 <div class="text-sm question-footer">
   <div class="text-grey">
     <%= l(question.created_at, format: :short) %>
@@ -17,6 +22,7 @@
     <span>@Аноним</span>
     <% end %>
   </div>
+
 
   <% if question.user == current_user %>
     <div>

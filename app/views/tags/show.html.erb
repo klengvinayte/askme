@@ -1,0 +1,9 @@
+<div class="user-box">
+  <h2 class="title-lg mt-lg mb-lg">Вопросы с тэгом #<%= @tag.name %></h2>
+</div>
+
+<% @questions.each do |question| %>
+  <div class="mt-sm container<%= "mt-sm transparent container_tr" if question.hidden? %>">
+    <%= render question %>
+  </div>
+<% end %>

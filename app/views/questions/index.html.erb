@@ -11,6 +11,13 @@
 </div>
 
 <div class="container mt-sm">
+  <h2 class="title-lg mb">
+    Хэштэги на сайте:
+  </h2>
+  <%= @tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ").html_safe  %>
+</div>
+
+<div class="container mt-sm">
   <h2 class="title-lg">
     <%= inclination(@questions.count, 'Последний', 'Последние', 'Последние') %>
     <%= @questions.count %>
