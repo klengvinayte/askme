@@ -1,24 +1,37 @@
-# README
+# AskMe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails AskMe. An application where you can ask questions and get answers.
 
-Things you may want to cover:
+* Ruby version: 3.1.2
+* Ruby on Rails version: 7.0.4
+* Database adapter: SQLite3
 
-* Ruby version
+Before starting, run:
 
-* System dependencies
+```
+$ bundle
+```
 
-* Configuration
+Next you need to configure `.env`
 
-* Database creation
 
-* Database initialization
+Then run the commands:
 
-* How to run the test suite
+```
+$ rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Run app:
 
-* Deployment instructions
+```
+$ rails s
+```
 
-* ...
+### Production
+
+In the production environment, add to `.env`:
+
+```
+database_username: #Your databse username
+database_password: #Your datatbase password
+```

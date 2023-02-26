@@ -4,7 +4,7 @@ class TagsController < ApplicationController
 
     if
       @tag.questions.empty?
-      redirect_to root_path, notice: "Нет вопросов с хэштэгом ##{@tag.name}"
+      redirect_to root_path, notice:  "#{I18n.t("controllers.tags.info")} ##{@tag.name}"
     else
       @questions = @tag.questions.order(created_at: :desc)
     end

@@ -16,7 +16,7 @@
 
 <% if @questions.any? %>
   <div class="container">
-    <%= link_to 'Спроси меня', new_question_path(user_id: @user.id),
+    <%= link_to t(".ask_me"), new_question_path(user_id: @user.id),
                 class: 'button button-yellow' %>
     <div class="mt">
       <%= render partial: 'questions/form', locals: { question: @question } %>
@@ -26,7 +26,7 @@
   <div class="container mt-sm">
     <h2 class="title-lg">
       <%= @questions.count %>
-      <%= inclination(@questions.count, 'вопрос', 'вопроса', 'вопросов') %>
+      <%= inclination(@questions.count, t(".question1"), t(".question2"), t(".question3")) %>
     </h2>
   </div>
 

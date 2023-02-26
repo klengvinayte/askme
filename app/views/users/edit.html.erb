@@ -1,9 +1,9 @@
 <div class="container">
-  <h2 class="title">Редактирование профиля</h2>
+  <h2 class="title"><%= t(".info") %></h2>
 
   <div class="mt">
     <p><%= image_tag @user.gravatar_url, title: "@#{@user.nickname}", class: 'rounded' %></p>
-    <p class="text-sm">Чтобы добавить или поменять аватар — зарегистрируйтесь на <%= link_to "Gravatar", 'https://gravatar.com' %> и загрузите фото</p>
+    <p class="text-sm"><%= t(".info2") %><%= link_to "Gravatar", 'https://gravatar.com' %> <%= t(".info3") %></p>
   </div>
 
   <% if @user.errors.any? %>
@@ -16,35 +16,35 @@
 
   <div class="mt">
     <%= form_with model: @user, data: { turbo: false } do |form| %>
-      <p><%= form.label :name, 'Имя' %></p>
+      <p><%= form.label :name, t(".name") %></p>
       <p><%= form.text_field :name, class: 'form-text-field' %></p>
 
-      <p class="mt"><%= form.label :nickname, 'Ник на сайте (лат буквы или цифры)' %></p>
+      <p class="mt"><%= form.label :nickname, t(".nickname") %></p>
       <p><%= form.text_field :nickname, class: 'form-text-field' %></p>
 
-      <p class="mt-lg text-sm">Если не хотите менять пароль — оставьте эти поля пустыми!</p>
+      <p class="mt-lg text-sm"><%= t(".password_info") %></p>
 
-      <p class="mt"><%= form.label :password, 'Пароль' %></p>
+      <p class="mt"><%= form.label :password, t(".password") %></p>
       <p><%= form.password_field :password, class: 'form-text-field' %></p>
 
-      <p class="mt"><%= form.label :password_confirmation, 'Подтверждение пароля' %></p>
+      <p class="mt"><%= form.label :password_confirmation, t(".password_confirmation") %></p>
       <p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
 
       <p class="mt">
-      <p class="mb"><%= form.label :color, 'Изменить цвет профиля' %></p>
+      <p class="mb"><%= form.label :color, t(".color") %></p>
       <span><%= form.color_field :color, class: 'mr' %></span>
 
       <p class="mt-lg">
-        <%= form.submit "Сохранить", class: 'button button-main' %>
-        <span class="text-sm">или <%= link_to "вернуться", :back %></span>
+        <%= form.submit t(".save"), class: 'button button-main' %>
+        <span class="text-sm"><%= t(".or") %> <%= link_to t(".back"), :back %></span>
       </p>
     <% end %>
   </div>
 
   <div class="mt-lg">
-    <%= button_to "Удалить профиль", user_path(@user),
+    <%= button_to t(".delete"), user_path(@user),
                   method: :delete,
-                  form: { data: { turbo_confirm: "Вы точно хотите удалить свой профиль?" } },
+                  form: { data: { turbo_confirm: t(".confirmation") } },
                   class: 'text-red text-sm' %>
   </div>
 </div>

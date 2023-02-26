@@ -1,33 +1,101 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  controllers:
+    application:
+      alert: "You can't come here!"
+    questions:
+      new: "A new question has been created!"
+      notice: "The 'Question' field should not be empty and should contain no more than 280 characters"
+      notice2: "Changes saved"
+      alert: "Failed to save changes"
+      delete: "The question has been deleted"
+    sessions:
+      log_in: "You are logged in to the site"
+      alert: "Incorrect email or password"
+      notice: "You have logged out of your account"
+    tags:
+      info: "There is no questions with this hashtag"
+    users:
+      notice: "You have successfully registered"
+      notice2: "The user's information has been updated"
+      notice3: "User deleted"
+      alert: "You have filled out the registration forms incorrectly"
+      alert2: "There are errors when trying to save the user"
+
+
+  layouts:
+    application:
+      sign_up: "Sign up"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+  questions:
+    form:
+      text: "Question text"
+      answer: "Answer"
+      save: "Save"
+      back: "Back"
+      or: "or"
+    question:
+      anonim: "@anonim"
+      change: "Edit question"
+      delete: "Delete question"
+      open: "Make visible"
+      hide: "Make it hidden"
+      confirmation: "Are you sure?"
+    edit:
+      edit: "Edit question"
+    index:
+      new: "New users"
+      hashtags: "Hashtags on the site:"
+      question: "question"
+      for_user: "for user"
+      question1: "question"
+      question2: "questions"
+      question3: "questions"
+      last1: "last"
+      last2: "last"
+      last3: "last"
+    new:
+      new_question: "New question"
+      for: "for"
+    show:
+      question: "question"
+      all_questions: "all questions"
+  sessions:
+    new:
+      log_in: "Log in"
+      info: "Enter your username and password to log in to the site"
+      password: "Password"
+  tags:
+    show:
+      info: "Questions with the tag #"
+  users:
+    no_questions:
+      info: "This user has no questions"
+      info2: "Ask the question first"
+    edit:
+      info: "Editing a profile"
+      info2: "To add or change an avatar, you should register "
+      info3: "and upload a photo "
+      name: "Name"
+      nickname: "Nickname on the site (Latin letters or numbers)"
+      password_info: "If you don't want to change your password, leave these fields empty!"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      color: "Change Profile color"
+      save: "Save"
+      or: "or"
+      back: "back"
+      delete: "Delete Profile"
+      confirmation: "Are you sure?"
+    new:
+      info: "Join us and ask!"
+      name: "Your name"
+      nickname: "Nickname on the site (Latin letters or numbers)"
+      sign_up: "Sign up"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+    show:
+      ask_me: "Ask me"
+      question1: "question"
+      question2: "questions"
+      question3: "questions"

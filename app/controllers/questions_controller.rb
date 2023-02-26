@@ -11,9 +11,11 @@ class QuestionsController < ApplicationController
 
     if @question.save
 
-      redirect_to user_path(@question.user), notice: 'Новый вопрос создан!'
+      redirect_to user_path(@question.user.nickname), notice: I18n.t("controllers.questions.new")
     else
-      flash.now[:alert] = "Поле 'Вопрос' не должно быть пустым и должно содержать не более 280 знаков"
+      @user = User.find(question_params[:user_id])
+
+      flash.now[:alert] = I18n.t("controllers.questions.notice")
 
       render :new
     end
@@ -24,9 +26,9 @@ class QuestionsController < ApplicationController
 
     if @question.update(question_params)
 
-      redirect_to user_path(@question.user), notice: 'Изменения сохранены'
+      redirect_to user_path(@question.user), notice: I18n.t("controllers.questions.notice2")
     else
-      flash.now[:alert] = "Не удалось сохранить изменения"
+      flash.now[:alert] = I18n.t("controllers.questions.alert")
 
       render :new
     end
@@ -36,7 +38,7 @@ class QuestionsController < ApplicationController
     @user = @question.user
     @question.destroy
 
-    redirect_to user_path(@user), notice: 'Вопрос удален'
+    redirect_to user_path(@user), notice: I18n.t("controllers.questions.delete")
   end
 
   def show

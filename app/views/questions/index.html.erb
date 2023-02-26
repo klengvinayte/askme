@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="title-lg mb">
-    Недавно добавились
+    <%= t('.new') %>
   </h2>
 
   <div class="users-box">
@@ -12,24 +12,24 @@
 
 <div class="container mt-sm">
   <h2 class="title-lg mb">
-    Хэштэги на сайте:
+    <%= t('.hashtags') %>
   </h2>
   <%= @tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ").html_safe  %>
 </div>
 
 <div class="container mt-sm">
   <h2 class="title-lg">
-    <%= inclination(@questions.count, 'Последний', 'Последние', 'Последние') %>
+    <%= inclination(@questions.count, t(".last1"), t(".last2"), t(".last3")) %>
     <%= @questions.count %>
-    <%= inclination(@questions.count, "вопрос", "вопроса", "вопросов") %>
+    <%= inclination(@questions.count, t(".question1"), t(".question2"), t(".question3")) %>
   </h2>
 </div>
 <% @questions = Question.order('created_at DESC') %>
 <% @questions.each do |question| %>
   <div class="mt-sm container<%= "mt-sm transparent container_tr" if question.hidden? %>">
     <p class="mb text-sm text-grey">
-      Вопрос <%= link_to "##{question.id}", question_path(question) %>
-      для юзера <%= link_to "@#{question.user.nickname}", user_path(question.user) %>
+      <%= t('.question') %> <%= link_to "##{question.id}", question_path(question) %>
+      <%= t('.for_user') %> <%= link_to "@#{question.user.nickname}", user_path(question.user) %>
     </p>
     <%= render question %>
   </div>

@@ -1,5 +1,5 @@
 <div class="user-box">
-  <h2 class="title-lg mt-lg mb-lg">Вопросы с тэгом #<%= @tag.name %></h2>
+  <h2 class="title-lg mt-lg mb-lg"><%= t(".info") %><%= @tag.name %></h2>
 </div>
 
 <% @questions.each do |question| %>

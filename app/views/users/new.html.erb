@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="title">Присоединяйся и спрашивай!</h2>
+  <h2 class="title"><%= t(".info") %></h2>
 
 
   <% if @user.errors.any? %>
@@ -12,22 +12,22 @@
 
   <div class="mt">
     <%= form_with model: @user, data: { turbo: false } do |form| %>
-      <p><%= form.label :name, 'Ваше имя' %></p>
+      <p><%= form.label :name, t(".name") %></p>
       <p><%= form.text_field :name, class: 'form-text-field' %></p>
 
-      <p class="mt"><%= form.label :nickname, 'Ник на сайте (лат буквы или цифры)' %></p>
+      <p class="mt"><%= form.label :nickname, t(".nickname") %></p>
       <p><%= form.text_field :nickname, class: 'form-text-field' %></p>
 
       <p class="mt"><%= form.label :email %></p>
       <p><%= form.text_field :email, class: 'form-text-field' %></p>
 
-      <p class="mt"><%= form.label :password %></p>
+      <p class="mt"><%= form.label t(".password") %></p>
       <p><%= form.password_field :password, class: 'form-text-field' %></p>
 
-      <p class="mt"><%= form.label :password_confirmation %></p>
+      <p class="mt"><%= form.label t(".password_confirmation") %></p>
       <p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
 
-      <p><%= form.submit "Зарегистрироваться", class: 'button button-main mt-lg' %></p>
+      <p><%= form.submit t(".sign_up"), class: 'button button-main mt-lg' %></p>
     <% end %>
   </div>
 </div>
