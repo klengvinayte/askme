@@ -7,7 +7,7 @@ class Question < ApplicationRecord
             length: { maximum: 280 }
 
   belongs_to :user
-  belongs_to :author, class_name: 'User', optional: true
+  belongs_to :author, class_name: "User", optional: true
 
   after_save_commit :update_tags
 

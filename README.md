@@ -12,8 +12,6 @@ Before starting, run:
 $ bundle
 ```
 
-Next you need to configure `.env`
-
 
 Then run the commands:
 
@@ -27,11 +25,14 @@ Run app:
 $ rails s
 ```
 
-### Production
+### Database in production
 
-In the production environment, add to `.env`:
+In the `production` environment, you must specify the database login and password in the environment variables `PG_DATABASE`, `PG_USER` and `PG_RASSWORD` or specify explicitly in `.env`
 
 ```
-database_username: #Your databse username
-database_password: #Your datatbase password
+production:
+  adapter: postgresql
+  user: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_RASSWORD'] %>
+  database: <%= ENV['PG_DATABASE'] %>
 ```

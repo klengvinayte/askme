@@ -1,20 +1,20 @@
 <div class="container">
   <h2 class="title-lg mb">
-    <%= t('.new') %>
+    <%= t(".new") %>
   </h2>
 
   <div class="users-box">
     <% @users.each do |user| %>
-      <%= render partial: 'users/user_avatar', locals: {user: user} %>
+      <%= render partial: "users/user_avatar", locals: { user: user } %>
     <% end %>
   </div>
 </div>
 
 <div class="container mt-sm">
   <h2 class="title-lg mb">
-    <%= t('.hashtags') %>
+    <%= t(".hashtags") %>
   </h2>
-  <%= @tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ").html_safe  %>
+  <%= @tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ").html_safe %>
 </div>
 
 <div class="container mt-sm">
@@ -24,12 +24,12 @@
     <%= inclination(@questions.count, t(".question1"), t(".question2"), t(".question3")) %>
   </h2>
 </div>
-<% @questions = Question.order('created_at DESC') %>
+<% @questions = Question.order("created_at DESC") %>
 <% @questions.each do |question| %>
   <div class="mt-sm container<%= "mt-sm transparent container_tr" if question.hidden? %>">
     <p class="mb text-sm text-grey">
-      <%= t('.question') %> <%= link_to "##{question.id}", question_path(question) %>
-      <%= t('.for_user') %> <%= link_to "@#{question.user.nickname}", user_path(question.user) %>
+      <%= t(".question") %> <%= link_to "##{question.id}", question_path(question) %>
+      <%= t(".for_user") %> <%= link_to "@#{question.user.nickname}", user_path(question.user) %>
     </p>
     <%= render question %>
   </div>

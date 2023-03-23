@@ -5,9 +5,9 @@ ruby "3.1.2"
 
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", require: false
-gem 'email_validator'
-gem 'font-awesome-rails'
-gem 'gravtastic'
+gem "email_validator"
+gem "font-awesome-rails"
+gem "gravtastic"
 gem "importmap-rails"
 gem "jbuilder"
 gem "puma", "~> 5.0"
@@ -23,7 +23,7 @@ end
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'dotenv-rails'
+  gem "dotenv-rails"
   gem "sqlite3", "~> 1.4"
 end
 

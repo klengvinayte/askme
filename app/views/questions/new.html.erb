@@ -1,7 +1,7 @@
 <div class="container">
-  <h2 class="title-lg mb-sm"><%= t('.new_question') %></h2>
+  <h2 class="title-lg mb-sm"><%= t(".new_question") %></h2>
 
-  <p class="mb"><%= t('.for') %> <%= link_to display_nickname(@user), user_path(@user.nickname) %></p>
+  <p class="mb"><%= t(".for") %> <%= link_to display_nickname(@user), user_path(@user.nickname) %></p>
 
   <%= render "form", question: @question %>
 </div>
