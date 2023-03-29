@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_08_121043) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_23_070145) do
   create_table "question_tags", force: :cascade do |t|
     t.integer "question_id", null: false
     t.integer "tag_id", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_08_121043) do
     t.boolean "hidden", default: false, null: false
     t.text "answer"
     t.integer "author_id"
+    t.index ["author_id"], name: "index_questions_on_author_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
